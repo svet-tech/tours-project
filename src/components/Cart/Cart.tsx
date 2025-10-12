@@ -1,0 +1,48 @@
+import { Link } from "react-router-dom";
+
+import classes from "./Cart.module.scss";
+
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '../../store';
+import { removeFromCart } from '../../slices/newSlice';
+
+export const Cart = () => {
+    const dispatch = useDispatch();
+
+    const cartItems = useSelector((state: RootState) => state.tours.cart);
+
+    const handleRemove = (tourId) => {
+        dispatch(removeFromCart(tourId));
+    };
+
+    return (
+        <>
+            <div className={classes.wrapCartItem}>
+
+                <h2 className={classes.titleCartItem}>Мои путешествия</h2>
+                {cartItems.length === 0 ? (
+                    <p className={classes.textEmpty}>В корзине пока пусто</p>
+                ) : (
+                    <ul >
+                        {cartItems.map((tour) => (
+                            <li key={tour.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}
+                                className={classes.cartItem}>
+                                <img src={tour.image} alt={tour.name} width={200} style={{ marginRight: '10px' }} />
+                                <div className={classes.infoCartItem}>
+                                    <h4>{tour.name}</h4>
+                                    <p>Цена: {tour.price}</p>
+                                    <button className={classes.payBtn}>Оплатить</button>
+                                    <button onClick={() => handleRemove(tour.id)} className={classes.deleteBtn}>Удалить</button>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <Link to="/" className={classes.linkToMain}>На главную</Link>
+
+            </div>
+        </>
+    );
+};
+
+export default Cart;

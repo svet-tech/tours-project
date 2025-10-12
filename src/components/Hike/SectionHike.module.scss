@@ -1,0 +1,91 @@
+.hike-about {
+    padding-top: 80px;
+    padding-bottom: 35px;
+    display: flex;
+    gap: 50px;
+    width: 1180px;
+    height: 526px;
+    margin: 0 auto;
+}
+
+.hike-images {
+    width: 50%;
+}
+
+.hike-about-text {
+    padding: 50px 55px;
+    width: 50%;
+}
+
+.hike-about-images {
+    width: 60%;
+    margin-top: 170px;
+    transition: all 1s;
+
+}
+
+.hike-about-images>img:hover {
+    transform: scale(1.12);
+    transition: all 1s;
+}
+
+.pre-title {
+    color: rgb(19, 111, 108);
+    font-size: 25px;
+    font-weight: 550;
+
+}
+
+.title-about {
+    line-height: 30px;
+}
+
+.text-about {
+    /* padding-right: 50px; */
+    padding-top: 20px;
+    padding-bottom: 30px;
+    line-height: 22px;
+}
+
+.image-first {
+    width: 350px;
+    height: 400px;
+    background-image: url('/public/Change-img_1.jpg');
+    border-radius: 25px;
+
+}
+
+.image-second {
+    width: 350px;
+    height: 400px;
+    background-image: url('/public/Change-img_2.jpg');
+    border-radius: 25px;
+    position: relative;
+    left: 130px;
+    bottom: 290px;
+}
+
+.image-first:hover {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+
+}
+
+.black-button {
+    min-width: 170px;
+    height: 28px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 4px;
+}
+
+.black-button:hover {
+    scale: 1.1;
+    background-color: cadetblue;
+    box-shadow: 2px 3px 3px;
+}

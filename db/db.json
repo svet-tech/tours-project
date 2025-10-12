@@ -1,0 +1,39 @@
+{
+    "tours": [
+        {
+            "id": "0",
+            "name": "Домбай",
+            "image": "/dombay.jpg",
+            "price": "14000",
+            "days": "5"
+        },
+        {
+            "id": "1",
+            "name": "Архыз",
+            "image": "/1702492-00.jpg",
+            "price": "12000",
+            "days": "7"
+        },
+        {
+            "id": "2",
+            "name": "Байкал",
+            "image": "/baikal.jpg",
+            "price": "42500",
+            "days": "12"
+        },
+        {
+            "id": "3",
+            "name": "Крым",
+            "image": "/crimea.jpg",
+            "price": "22500",
+            "days": "10"
+        },
+        {
+            "id": "4",
+            "name": "Кавказ",
+            "image": "/kavkaz.jpg",
+            "price": "12500",
+            "days": "7"
+        }
+    ]
+}

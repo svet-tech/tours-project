@@ -1,0 +1,47 @@
+.cardWrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 650px;
+  height: 330px;
+  border: #fbf7f7;
+  border-radius: 5px;
+  margin-top: 25px;
+  z-index: 7;
+  margin: 0 auto;
+  
+}
+
+.info {
+  margin-top: 205px;
+  margin-left:  405px;;
+  padding: 5px;
+  width: 225px;
+  height: 95px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 9px;
+}
+
+.name {
+  font-weight: bold ;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+.AddToCartBtn{
+  background-color: rgb(121, 241, 245);
+  border-radius: 5px;
+  border: rgb(30, 114, 128) solid 1px;
+  height: 25px;
+  font-size: 16px;
+  margin-left: 45px;
+
+}

@@ -1,0 +1,94 @@
+
+.wrapBlog {
+    padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: rgb(207, 205, 205);
+  padding: 45px 150px 110px 150px;
+  margin-bottom: -35px;
+  box-sizing: border-box;
+}
+
+.blog {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 15px 10px 45px 10px;
+}
+
+.blogCard {
+  display: flex;
+  gap: 24px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.preTitle{
+    color: rgb(40, 134, 114);
+    font-size: 22px;
+    font-weight: bold;
+}
+.blogCardImg img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.blogCardText {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.blogCardText h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+
+.blogCardText p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+
+.blogCardInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 18px;
+  font-size: 12px;
+  color: gray;
+}
+
+
+.blackButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.blackButton:hover {
+  background-color: #333;
+}
+.linkToMain{
+     display: block;
+    color: blue;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}

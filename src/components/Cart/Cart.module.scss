@@ -1,0 +1,44 @@
+.linkToMain{
+     display: block;
+    color: blue;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+.cartItem{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 500px;
+    height: 200px;
+    background-color: rgb(126, 190, 192);
+    padding: 20px;
+    border-radius: 10px;
+}
+.infoCartItem{
+    margin-left: 38px;
+}
+.payBtn{
+    background-color: green;
+    margin-right: 25px;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+.deleteBtn{
+    background-color: darkgray;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+.titleCartItem{
+    text-align: center;
+}
+.wrapCartItem{
+    background-image: url("/public/Photo-main.jpg");
+    height: 630px;
+}
+.textEmpty{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}

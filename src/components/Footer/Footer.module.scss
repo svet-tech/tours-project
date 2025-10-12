@@ -1,0 +1,145 @@
+.footer {
+    background-color: rgb(13, 63, 36);
+    color: white;
+}
+.footer-column {
+    width: 30%;
+
+}
+
+.footer-list-info {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 115px;
+    padding-bottom: 100px;
+    display: flex;
+
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.footer-company-info {
+    margin-right: 45px;
+
+}
+
+.footer-company-info-text {
+    margin-bottom: 64px;
+}
+
+.footer-company-info-text>p {
+    line-height: 22px;
+}
+
+.footer-company-info-emale {
+    display: flex;
+    gap: 45px;
+    margin-bottom: 18px;
+}
+
+.footer-bottom {
+    background-color: rgb(37, 37, 37);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.footer-company-info-links {
+    display: flex;
+    gap: 10px;
+}
+
+.personal-info {
+    text-decoration: underline;
+}
+
+.services>li::before {
+    content: "\203A";
+    padding: 10px;
+}
+
+.services>li {
+    line-height: 28px;
+    margin-left: -48px;
+}
+
+.services>li:hover {
+    color: aqua;
+}
+
+.footer-company-info-links>img {
+    transition: 1s;
+}
+
+.footer-company-info-links>img:hover {
+    transform: scale(1.3);
+}
+
+.top-block {
+    width: 1000px;
+    height: 120px;
+    background-color: wheat;
+    padding: 30px;
+    padding-left: 50px;
+    margin: 0 auto;
+    margin-top: 60px;
+    z-index: 5;
+    box-shadow: 5px 3px 5px rgb(245, 245, 196);
+    display: flex;
+    gap: 130px;
+    /* justify-content: space-between; */
+}
+
+.top-block-text {
+    color: #151515;
+}
+
+.input-email {
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.input-email:invalid {
+    border: 2px dashed rgb(67, 38, 251);
+}
+
+.input-email:invalid:required {
+    background-image: linear-gradient(to right, rgb(234, 195, 160), rgb(162, 195, 151));
+}
+
+.input-email:valid {
+    border: 2px solid black;
+}
+
+.button-news {
+    width: 210px;
+    height: 40px;
+    background-color: rgb(82, 81, 81);
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.button-news:hover {
+    transform: scale(1.05);
+    background-color: rgb(126, 126, 243);
+}
+
+.top-block-left-part {
+    width: 30%;
+}
+
+.top-block-black-title {
+    font-size: 25px;
+    color: #151515;
+}
+
+.top-block-text-info {
+    font-size: 13px;
+    color: #151515;
+}

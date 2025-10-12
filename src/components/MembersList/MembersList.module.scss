@@ -1,0 +1,35 @@
+.members {
+
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 630px;
+    font-size: 22px;
+    font-weight: bold;
+    background-image: url("/Photo-main.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.membersListText {
+    text-align: center;
+    padding-top: 15px;
+    color: rgb(64, 64, 82);
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: rgb(206, 204, 211);
+}
+
+.linkToMain {
+    display: block;
+    color: blue;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
