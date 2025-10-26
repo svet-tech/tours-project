@@ -8,18 +8,19 @@ export interface Tours {
     image: string;
     price: string;
     days: string;
+    description: string;
 
 }
 
 export interface NewState {
- tours: Tours[];
- cart: Tours[];
-   isCartActive: boolean;
+    tours: Tours[];
+    cart: Tours[];
+    isCartActive: boolean;
 
 }
 
 export const getTours = createAsyncThunk("/tours", async () => {
-    const tours = axios.get<string, {data: Tours[]}>(
+    const tours = axios.get<string, { data: Tours[] }>(
         "http://localhost:4200/tours");
 
 
@@ -27,36 +28,36 @@ export const getTours = createAsyncThunk("/tours", async () => {
 });
 
 const initialState: NewState = {
-   tours: [],
-   cart: [],
-   isCartActive: false,
+    tours: [],
+    cart: [],
+    isCartActive: false,
 }
 
 
 export const newSlice = createSlice({
-  name: 'tours',
-  initialState,
-  reducers: { 
-     addToCart: (state, action: PayloadAction<Tours>) => {
-      state.cart.push(action.payload);
-      state.isCartActive = true;
+    name: 'tours',
+    initialState,
+    reducers: {
+        addToCart: (state, action: PayloadAction<Tours>) => {
+            state.cart.push(action.payload);
+            state.isCartActive = true;
+        },
+
+        removeFromCart: (state, action: PayloadAction<string>) => {
+            state.cart = state.cart.filter(tour => tour.id !== action.payload);
+            if (state.cart.length === 0) {
+                state.isCartActive = false;
+            }
+        },
     },
+    extraReducers: (builder) => {
+        builder.addCase(getTours.fulfilled,
+            (state, action: PayloadAction<Tours[]>) => {
+                state.tours = action.payload;
+            }
 
-    removeFromCart: (state, action: PayloadAction<string>) => {
-  state.cart = state.cart.filter(tour => tour.id !== action.payload);
-  if (state.cart.length === 0) {
-      state.isCartActive = false;
-}
-  },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(getTours.fulfilled,
-        (state, action: PayloadAction<Tours[]>) => {
-            state.tours = action.payload;
-        }
-
-    )
-  },
+        )
+    },
 })
 
 // Action creators are generated for each case reducer function

@@ -29,8 +29,8 @@ export const Cart = () => {
                                 className={classes.cartItem}>
                                 <img src={tour.image} alt={tour.name} width={200} style={{ marginRight: '10px' }} />
                                 <div className={classes.infoCartItem}>
-                                    <h4>{tour.name}</h4>
-                                    <p>Цена: {tour.price}</p>
+                                    <h2>{tour.name}</h2>
+                                    <p className={classes.price}>Цена: {tour.price} ₽</p>
                                     <button className={classes.payBtn}>Оплатить</button>
                                     <button onClick={() => handleRemove(tour.id)} className={classes.deleteBtn}>Удалить</button>
                                 </div>

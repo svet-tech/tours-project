@@ -84,17 +84,17 @@ export const SectionTitle = ({ onFilteredToursChange, onSearch }: Props) => {
                         </div>
                        
 
-                      
+                      <div className={classes.groupBtn}>
                             <button type="submit" className={classes.topButton}>
                                 Найти программу
                             </button>
                         
-                    </form>
-                     <div style={{ marginTop: '10px' }}>
-                            <button type="button" onClick={handleReset} className={classes.topButton}>
-                                Показать все туры
+                            <button type="button" onClick={handleReset} className={classes.resetButton}>
+                                Сбросить фильтр
                             </button>
                         </div>
+                    </form>
+                     
                 </div>
             </div>
         </section>

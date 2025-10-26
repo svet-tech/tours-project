@@ -31,6 +31,7 @@
     border-radius: 5px;
 }
 .titleCartItem{
+    padding-top: 20px;
     text-align: center;
 }
 .wrapCartItem{
@@ -41,4 +42,8 @@
     text-align: center;
     font-weight: bold;
     font-size: 18px;
+}
+.price{
+    margin-top: 25px;
+    font-size: larger;
 }

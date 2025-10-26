@@ -2,7 +2,7 @@ import type { Tours } from "../../slices/newSlice";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../slices/newSlice';
 import classes from "./TourCard.module.scss"
-
+import { useState } from 'react';
 
 interface Props {
     tour: Tours;
@@ -10,10 +10,20 @@ interface Props {
 
 export const TourCard = ({ tour }: Props) => {
     const dispatch = useDispatch();
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleAddToCart = () => {
         dispatch(addToCart(tour));
-    }
+    };
+
+    const handleImageClick = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
     return (
 
         <>
@@ -22,6 +32,7 @@ export const TourCard = ({ tour }: Props) => {
                     className={classes.card}
                     style={{ backgroundImage: `url(${tour.image})` }}
                     aria-label={tour.name}
+                    onClick={handleImageClick}
                 >
                     <div className={classes.info}>
                         <div className={classes.name}
@@ -37,6 +48,14 @@ export const TourCard = ({ tour }: Props) => {
 
                 </div>
             </div>
-
+            {isModalOpen && (
+                <div className={classes.modalOverlay} onClick={handleCloseModal}>
+                    <div className={classes.modalContent} onClick={(e) => e.stopPropagation()}>
+                        <button className={classes.closeBtn} onClick={handleCloseModal}>Закрыть</button>
+                        <h2>{tour.name}</h2>
+                        <p>{tour.description}</p>
+                    </div>
+                </div>
+            )}
         </>)
 };
