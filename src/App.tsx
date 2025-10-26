@@ -7,6 +7,8 @@ import { SectionTitle } from './components/SectionTitle/SectionTitle';
 import { SectionHike } from './components/Hike/SectionHike';
 import { TourCard } from './components/TourCard/TourCard';
 import { Footer } from './components/Footer/Footer';
+import type { Tours } from "./slices/newSlice";
+
 
 function App() {
   const dispatch = useAppDispatch();

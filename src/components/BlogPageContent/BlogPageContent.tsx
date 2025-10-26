@@ -2,26 +2,35 @@ import React, { useState, useEffect } from 'react';
 import classes from "./BlogPageContent.module.scss";
 import { Link } from "react-router-dom";
 
-export const BlogContent = () => {
-  const [articles, setArticles] = useState([]);
-  const [activeArticle, setActiveArticle] = useState(null);
+interface Article {
+  id: number | string;
+  title: string;
+  excerpt: string;
+  fullText: string;
+  imgSrc: string;
+  date: string;
+}
+
+
+export const BlogContent: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [activeArticle, setActiveArticle] = useState<Article | null>(null);
 
   // Загрузка статей
   useEffect(() => {
     fetch('http://localhost:4200/articles')
       .then(res => res.json())
-      .then(data => setArticles(data))
+      .then((data: Article[]) => setArticles(data))
       .catch(err => console.error('Ошибка загрузки:', err));
   }, []);
 
-  const openModal = (article) => {
+ const openModal = (article: Article) => {
     setActiveArticle(article);
   };
 
   const closeModal = () => {
     setActiveArticle(null);
   };
-
   return (
     <section className={classes.wrapBlog}>
       <p className={classes.preTitle}>Делимся впечатлениями</p>

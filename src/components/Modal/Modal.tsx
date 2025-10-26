@@ -1,8 +1,15 @@
+import React from 'react';
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
 
-export const Modal = ({ isOpen, onClose, children }) => {
+
+export const Modal: React.FC<ModalProps>= ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
-  const handleBackdropClick = (e) => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
     }

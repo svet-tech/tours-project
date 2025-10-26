@@ -1,6 +1,11 @@
+import React from 'react';
 
+interface TogglePasswordButtonProps {
+  show: boolean;
+  onToggle: () => void;
+}
 
-export const TogglePasswordButton = ({ show, onToggle }) => (
+export const TogglePasswordButton: React.FC<TogglePasswordButtonProps> = ({ show, onToggle }) => (
   <button
     type="button"
     onClick={onToggle}

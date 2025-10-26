@@ -12,9 +12,6 @@ export const SectionTitle = ({ onFilteredToursChange, onSearch }: Props) => {
     const [searchLocation, setSearchLocation] = useState('');
     const [filtered, setFiltered] = useState<Tours[]>(tours);
 
-    const [setLocalFilters] = useState({
-        location: '',
-    });
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -27,7 +24,6 @@ export const SectionTitle = ({ onFilteredToursChange, onSearch }: Props) => {
     const handleReset = () => {
         setSearchLocation('');
         setFiltered(tours); 
-        setLocalFilters({ location: '' });
         onFilteredToursChange(tours);
     };
 

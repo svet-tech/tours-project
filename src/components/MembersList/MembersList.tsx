@@ -42,7 +42,7 @@ const mockPeoples: Person[] = [
 export const MembersList = () => {
   const [peoples, setPeoples] = useState(mockPeoples);
 
-  const handleRemovePeople = (id) => {
+  const handleRemovePeople = (id: number) => {
     const filteredPeoples = peoples.filter((people) => people.id !== id);
     setPeoples(filteredPeoples);
   };

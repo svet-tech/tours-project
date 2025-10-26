@@ -11,7 +11,7 @@ export const Cart = () => {
 
     const cartItems = useSelector((state: RootState) => state.tours.cart);
 
-    const handleRemove = (tourId) => {
+    const handleRemove = (tourId: string) => {
         dispatch(removeFromCart(tourId));
     };
 

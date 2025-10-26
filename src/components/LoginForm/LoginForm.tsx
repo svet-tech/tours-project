@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import { TogglePasswordButton } from '../TogglePasswordButton/TogglePasswordButton';
-import { blue } from '@mui/material/colors';
 
 const persons = [
   { name: 'Иван', password: 'ivan123' },
@@ -8,15 +7,19 @@ const persons = [
   { name: 'Виктор', password: 'vik123' },
 ];
 
-export const LoginForm = ({ onLoginSuccess }) => {
+interface LoginFormProps {
+  onLoginSuccess: () => void; 
+}
+
+export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const passwordInputRef = useRef(null);
+const passwordInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const user = persons.find((person) => person.name === login);
@@ -31,11 +34,12 @@ export const LoginForm = ({ onLoginSuccess }) => {
     } else {
       alert('Пароль неверный!');
       setPassword('');
-      passwordInputRef.current && passwordInputRef.current.focus();
+      if (passwordInputRef.current) {
+        passwordInputRef.current.focus();}
     }
   };
 
-  const handlePasswordChange = (e:any) => {
+  const handlePasswordChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const regex = /^[a-zA-Z0-9]*$/;
 
@@ -49,7 +53,7 @@ export const LoginForm = ({ onLoginSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{backgroundColor: 'rose'}}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="loginInput" style={{ display: 'block', marginBottom: 8, color: 'blue' }}>
         Логин:
       </label>

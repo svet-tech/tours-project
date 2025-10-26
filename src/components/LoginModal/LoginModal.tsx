@@ -1,9 +1,9 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Modal } from '../Modal/Modal';
 import { LoginForm } from '../LoginForm/LoginForm';
-import classes from "./LoginModal.module.scss";
+import classes from './LoginModal.module.scss';
 
-export const LoginModal = () => {
+export const LoginModal: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -18,19 +18,22 @@ export const LoginModal = () => {
     closeModal();
   };
 
-  const handleKeyDown = (e) => {
+  // Указание типа события
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Escape' && modalOpen) {
       closeModal();
     }
   };
 
+  // Обработка добавления/удаления слушателя
   useEffect(() => {
     if (modalOpen) {
       window.addEventListener('keydown', handleKeyDown);
-    } else {
-      window.removeEventListener('keydown', handleKeyDown);
+      // Очистка при закрытии или размонтировании
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [modalOpen]);
 
   return (

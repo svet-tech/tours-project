@@ -1,8 +1,25 @@
-import { useState } from "react";
-import classes from './PeopleCard.module.scss'
+import React, { useState } from "react";
+import classes from './PeopleCard.module.scss';
 
+interface Person {
+  id: number; // или string
+  name: string;
+  age: number;
+}
 
-export const PeopleCard = ({ people, handleRemove, setPeoples, peoples }) => {
+interface PeopleCardProps {
+  people: Person;
+  handleRemove: (id: number) => void;
+  setPeoples: (peopleArray: Person[]) => void;
+  peoples: Person[];
+}
+
+export const PeopleCard: React.FC<PeopleCardProps> = ({
+  people,
+  handleRemove,
+  setPeoples,
+  peoples
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(people.name);
   const [newAge, setNewAge] = useState(String(people.age));
@@ -23,6 +40,7 @@ export const PeopleCard = ({ people, handleRemove, setPeoples, peoples }) => {
     setPeoples(editedPeoples);
     setIsEditing(false);
   };
+
   return (
     <div
       onDoubleClick={() => setIsEditing(!isEditing)}
@@ -47,7 +65,8 @@ export const PeopleCard = ({ people, handleRemove, setPeoples, peoples }) => {
       ) : (
         <span className={classes.itemText}>Возраст: {people.age}</span>
       )}
-      <button className={["edit-btn"]}
+      <button
+        className="edit-btn"
         onClick={() =>
           isEditing ? handleChangePeople() : handleRemove(people.id)
         }
